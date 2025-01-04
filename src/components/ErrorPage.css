@@ -1,0 +1,29 @@
+/* ErrorPage.css */
+
+.error-container {
+    text-align: center;
+    padding: 50px;
+    background-color: #f0f0f0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .error-title {
+    font-size: 3rem;
+    color: #ff6347;
+  }
+  
+  .error-message {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .error-link {
+    font-size: 1.2rem;
+    color: #007bff;
+    text-decoration: none;
+  }
+  
