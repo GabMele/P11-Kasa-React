@@ -3,37 +3,39 @@
 
 // import { Link } from 'react-router-dom';
 // import PropTypes from 'prop-types';
-import styles from './Home.module.scss';
+import styles from "./Home.module.scss";
+import Collapse from "../../components/Collapse/index";
 
-// src/pages/Home.jsx
-import DataFetchingComponent from '@/components/DataFetchingComponent';
+const titleTest = "test";
 
-const Home = () => (
+const Home = ({ data }) => (
   <div className={styles.home}>
     <h1>Accueil</h1>
-    <DataFetchingComponent source="local">
-      {(data) => (
-        <div>
-          {data ? (
-            data.map((listing) => (
-              <div key={listing.id}>
-                <h2>{listing.title}</h2>
-                <p>{listing.description}</p>
-                <p>{listing.tags}</p>
-              </div>
-            ))
-          ) : (
-            <p>No data available.</p>
-          )}
-        </div>
-      )}
-    </DataFetchingComponent>
 
+    <div>
+      {data ? (
+        data.map((listing) => (
+          <div key={listing.id}>
+            <h2>{listing.title}</h2>
+            <p>{listing.description}</p>
+            <p>{listing.tags}</p>
+          </div>
+        ))
+      ) : (
+        <p>No data available.</p>
+      )}
+    </div>
+    <div>
+      <Collapse title={titleTest}>
+        {(t) => (
+          <ul>
+            <li>{t}</li>
+            <li>test puce</li>
+          </ul>
+        )}
+      </Collapse>
+    </div>
   </div>
 );
 
 export default Home;
-
-
-
-
