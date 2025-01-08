@@ -1,15 +1,11 @@
 // src/App.jsx
-import DataFetchingComponent from './components/DataFetchingComponent';
-import AppRouter from './router';
+import { DataProvider } from '@/context/DataProvider'; 
+import AppRouter from '@/router';
 
-const App = () => {
-  return (
-    <div>
-      <DataFetchingComponent source="local">
-        {data => <AppRouter data={data} />}
-      </DataFetchingComponent>
-    </div>
-  );
-};
+const App = () => (
+  <DataProvider source="local">
+    <AppRouter />
+  </DataProvider>
+);
 
 export default App;

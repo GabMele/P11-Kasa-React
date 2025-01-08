@@ -1,27 +1,22 @@
 // src/pages/ListingDetails/index.jsx
 import { useParams } from 'react-router-dom';
-import PropTypes from 'prop-types';
+import { useData } from '@/hooks/useData';
 
-const ListingDetails = ({ data }) => {
+const ListingDetails = () => {
   const { id } = useParams();
-  const listing = data.find(item => item.id === id);
+  const { data } = useData();
 
-  if (!listing) {
-    return <p>Annonce non trouvée !</p>;
-  }
+  const listing = data?.find((item) => item.id === id);
 
-  return (
+  return listing ? (
     <div>
       <h1>{listing.title}</h1>
       <p>{listing.description}</p>
-      {/* Display additional details if necessary */}
+      <p>{listing.tags}</p>
     </div>
+  ) : (
+    <p>Annonce non trouvée.</p>
   );
 };
-
-// PropTypes validation
-ListingDetails.propTypes = {
-    data: PropTypes.array.isRequired, // 'data' should be an array (list of listings)
-  };
 
 export default ListingDetails;
