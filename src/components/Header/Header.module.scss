@@ -1,0 +1,34 @@
+@import '../../styles/global.scss';
+
+.header {
+    display: flex;
+    justify-content: space-between; /* Push logo and nav to the extremes */
+    align-items: center; /* Center vertically */
+    padding-top: 30px;
+    padding-bottom: 20px;
+
+    &__logo {
+        width: 120px; /* Set logo container width */
+        img {
+            width: 100%; /* Adjust the image to fit the container */
+            height: auto; /* Maintain aspect ratio */
+        }
+    }
+
+    &__nav {
+        display: flex;
+        gap: 20px; /* Space between links */
+
+        &__link {
+            font-size: $font-size-medium;
+            font-weight: bold;
+            color: $text-color;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+

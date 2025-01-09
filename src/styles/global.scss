@@ -1,3 +1,84 @@
-* {
+// ==============================
+// Global SCSS File
+// ==============================
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+
+// SCSS Variables
+  
+  $breakpoint-mobile: 640px;
+  
+  // SCSS Variables
+  $primary-color: #FF6060;
+  $secondary-color: #eaeaea;
+  $background-color: #ffffff;
+  $text-color: #212529;
+  $highlight-color: #FFFFFF;
+  $highlight-background: $primary-color;
+  $background-dark-image : url('@/assets/marble-texture.jpg');
+
+  
+  $font-size-small: 0.875rem;
+  $font-size-medium: 1rem;
+  $font-size-large: 1.5rem;
+  
+  
+  // ==============================
+  // Global Box-Sizing
+  // ------------------------------
+  *,
+  *::before,
+  *::after {
     box-sizing: border-box;
-}
+  }
+  
+  // ==============================
+  // Mixins
+  // ------------------------------
+  @mixin mobile {
+    @media (max-width: $breakpoint-mobile) {
+      @content;
+    }
+  }
+  
+  @mixin desktop {
+    @media (min-width: $breakpoint-mobile + 1) {
+      @content;
+    }
+  }
+  
+  // ==============================
+  // Global Styles
+  // ------------------------------
+  body {
+    margin: 0 auto;
+    padding: 0 20px;
+    font-family: 'Montserrat', sans-serif;
+    color: $text-color;
+    background-color: $background-color;
+    font-size: $font-size-medium;
+    max-width: 960px;
+    min-width: 360px;
+  
+  
+    @include mobile {
+      width: 100%;
+      font-size: $font-size-small;
+    }
+  
+    @include desktop {
+      font-size: $font-size-medium;
+    }
+  }
+  
+  a {
+    text-decoration: none; /* Remove default underline */
+    transition: color 0.2s ease, text-decoration 0.2s ease; /* Smooth hover effect */
+  
+    &:hover {
+      text-decoration: underline; /* Apply underline on hover */
+      color: $primary-color; /* Optional: Change color on hover */
+    }
+  }
+  

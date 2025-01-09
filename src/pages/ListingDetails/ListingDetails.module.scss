@@ -1,0 +1,112 @@
+// ListingDetails.module.scss
+@import '../../styles/global.scss';
+
+.listing {
+  padding: 30px auto;
+  max-width: fit-content;
+
+  &__cover img {
+    width: 100%; /* Full width of the parent container */
+    border-radius: 20px;
+    margin-bottom: 20px;
+    overflow: hidden; /* Ensures the image respects the border-radius */
+  }
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Align items to the top */
+    margin-bottom: 20px;
+
+    &__left {
+      flex: 1; /* Take up remaining space on the left */
+    }
+
+    &__title {
+      font-size: $font-size-large;
+      color: $primary-color;
+      margin-bottom: 10px;
+    }
+
+    &__location {
+      font-size: $font-size-medium;
+      color: $text-color;
+    }
+
+    &__right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end; /* Align host and rating to the right */
+      gap: 10px; /* Add spacing between elements */
+    }
+
+    &__host {
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px; /* Space between name and picture */
+    
+      &__name {
+        font-size: $font-size-medium;
+        color: $text-color;
+        text-align: right; /* Align text to the right */
+        line-height: 1.4; /* Adjust line height for better spacing */
+        word-break: break-word; /* Forces text to break into multiple lines */
+        max-width: 5rem; /* Restrict the width to encourage line breaks */
+      }
+    
+      &__picture {
+        width: 50px; /* Host picture size */
+        //height: 2.4rem;
+        border-radius: 50%; /* Circular shape */
+        object-fit: cover;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow */
+      }
+    }
+    
+
+    &__rating {
+      display: flex;
+      gap: 2px;
+
+      &__star {
+        font-size: $font-size-large;
+        color: $secondary-color; /* Empty stars */
+
+        &.full {
+          color: $primary-color; /* Filled stars */
+        }
+      }
+    }
+  }
+
+  &__tags {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+
+    &__tag {
+      background-color: $highlight-background;
+      color: $highlight-color;
+      padding: 5px 20px;
+      font-size: $font-size-small;
+      border-radius: 6px;
+      display: inline-block;
+    }
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+
+    &__description,
+    &__equipments {
+      flex: 1;
+    }
+
+    @include mobile {
+      flex-direction: column;
+    }
+  }
+}

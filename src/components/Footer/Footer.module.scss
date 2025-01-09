@@ -1,0 +1,25 @@
+@import '../../styles/global.scss';
+
+.footer {
+    margin-top: 30px;
+    padding-top: 50px;
+    padding-bottom: 10px;
+    background-image: $background-dark-image;
+    text-align: center;
+
+    &__logo {
+        margin: 0 auto;
+        width: 120px; /* Set logo container width */
+        img {
+            width: 100%; /* Adjust the image to fit the container */
+            height: auto; /* Maintain aspect ratio */
+            filter: grayscale(1) brightness(150%);            
+        }
+    }
+
+    &__copyright {
+        margin-top: 20px;
+        color: $highlight-color;
+    }
+}
+

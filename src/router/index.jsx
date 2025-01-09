@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from '@/pages/Home';
 import About from '@/pages/About';
 import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 import ErrorPage from '@/components/ErrorPage';
 import ListingDetails from '@/pages/ListingDetails';
 
@@ -14,6 +15,7 @@ const AppRouter = () => (
       <Route path="/listings/:id" element={<ListingDetails />} />
       <Route path="*" element={<ErrorPage />} />
     </Routes>
+    <Footer />
   </Router>
 );
 
