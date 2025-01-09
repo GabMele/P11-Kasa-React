@@ -1,0 +1,16 @@
+@use "./variables.scss" as variables;
+
+// ==============================
+// Mixins
+// ------------------------------
+@mixin mobile {
+  @media (max-width: variables.$breakpoint-mobile) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: (variables.$breakpoint-mobile + 1)) {
+    @content;
+  }
+}

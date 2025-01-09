@@ -1,8 +1,8 @@
-@use '../../styles/global' as *;
+@use '../../styles/variables.scss' as variables;
 
 .home {
   &__hero {
-    background-image: $background-dark-image;
+    background-image: variables.$background-dark-image;
     background-size: cover;
     background-position: center;
     padding: 60px 20px;
@@ -11,7 +11,7 @@
 
     &__slogan {
       font-size: 2rem;
-      color: $highlight-color;
+      color: variables.$highlight-color;
       margin: 0;
     }
   }
@@ -47,11 +47,11 @@
         position: absolute;
         bottom: 10px;
         left: 10px;
-        color: $highlight-color;
+        color: variables.$highlight-color;
         background-color: rgba(0, 0, 0, 0.5); // Semi-transparent black background
         padding: 5px 10px;
         border-radius: 4px;
-        font-size: $font-size-small;
+        font-size: variables.$font-size-small;
       }
     }
   }

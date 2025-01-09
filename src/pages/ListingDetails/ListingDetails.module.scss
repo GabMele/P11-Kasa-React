@@ -1,5 +1,6 @@
 // ListingDetails.module.scss
-@import '../../styles/global.scss';
+@use '../../styles/variables.scss' as variables;
+@use '../../styles/mixins.scss' as mixins;
 
 .listing {
   padding: 30px auto;
@@ -23,14 +24,14 @@
     }
 
     &__title {
-      font-size: $font-size-large;
-      color: $primary-color;
+      font-size: variables.$font-size-large;
+      color: variables.$primary-color;
       margin-bottom: 10px;
     }
 
     &__location {
-      font-size: $font-size-medium;
-      color: $text-color;
+      font-size: variables.$font-size-medium;
+      color:variables.$text-color;
     }
 
     &__right {
@@ -47,8 +48,8 @@
       gap: 10px; /* Space between name and picture */
     
       &__name {
-        font-size: $font-size-medium;
-        color: $text-color;
+        font-size: variables.$font-size-medium;
+        color:variables.$text-color;
         text-align: right; /* Align text to the right */
         line-height: 1.4; /* Adjust line height for better spacing */
         word-break: break-word; /* Forces text to break into multiple lines */
@@ -70,11 +71,11 @@
       gap: 2px;
 
       &__star {
-        font-size: $font-size-large;
-        color: $secondary-color; /* Empty stars */
+        font-size: variables.$font-size-large;
+        color: variables.$secondary-color; /* Empty stars */
 
         &.full {
-          color: $primary-color; /* Filled stars */
+          color: variables.$primary-color; /* Filled stars */
         }
       }
     }
@@ -86,10 +87,10 @@
     margin-bottom: 20px;
 
     &__tag {
-      background-color: $highlight-background;
-      color: $highlight-color;
+      background-color: variables.$highlight-background;
+      color:variables.$highlight-color;
       padding: 5px 20px;
-      font-size: $font-size-small;
+      font-size:variables.$font-size-small;
       border-radius: 6px;
       display: inline-block;
     }
@@ -105,7 +106,7 @@
       flex: 1;
     }
 
-    @include mobile {
+    @include mixins.mobile {
       flex-direction: column;
     }
   }
