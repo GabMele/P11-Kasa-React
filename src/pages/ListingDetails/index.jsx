@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { useData } from '@/hooks/useData';
 import Collapse from '@/components/Collapse';
+import Slideshow from '@/components/Slideshow';
 import styles from './ListingDetails.module.scss';
 
 const ListingDetails = () => {
@@ -28,9 +29,9 @@ const ListingDetails = () => {
 
   return listing ? (
     <div className={styles.listing}>
-      {/* Large Picture */}
-      <div className={styles.listing__cover}>
-        <img src={listing.cover} alt={listing.title} />
+      {/* Slideshow */}
+      <div className={styles.listing__slideshow}>
+        <Slideshow images={listing.pictures} />
       </div>
 
       {/* Title and Location */}
@@ -38,26 +39,29 @@ const ListingDetails = () => {
         <div className={styles.listing__info__left}>
           <h1 className={styles.listing__info__title}>{listing.title}</h1>
           <p className={styles.listing__info__location}>{listing.location}</p>
-        {/* Tags Section */}
-        <div className={styles.listing__tags}>
-          {listing.tags.map((tag, index) => (
-            <div key={index} className={styles.listing__tags__tag}>
-            {tag}
-            </div>
-        ))}
-        </div>
-        
+          {/* Tags Section */}
+          <div className={styles.listing__tags}>
+            {listing.tags.map((tag, index) => (
+              <div key={index} className={styles.listing__tags__tag}>
+                {tag}
+              </div>
+            ))}
+          </div>
         </div>
         <div className={styles.listing__info__right}>
           <div className={styles.listing__info__host}>
-            <span className={styles.listing__info__host__name}>{listing.host.name}</span>
+            <span className={styles.listing__info__host__name}>
+              {listing.host.name}
+            </span>
             <img
               className={styles.listing__info__host__picture}
               src={listing.host.picture}
               alt={`${listing.host.name}'s avatar`}
             />
           </div>
-          <div className={styles.listing__info__rating}>{renderStars(listing.rating)}</div>
+          <div className={styles.listing__info__rating}>
+            {renderStars(listing.rating)}
+          </div>
         </div>
       </div>
 
