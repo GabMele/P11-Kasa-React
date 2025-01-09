@@ -1,5 +1,5 @@
 @use "sass:color";
-@import '../../styles/global.scss';
+@use '../../styles/variables.scss' as variables;
 
 
 .collapse {
@@ -11,8 +11,8 @@
 
   &__header {
     cursor: pointer;
-    background-color: $highlight-background;
-    color: $highlight-color;
+    background-color: variables.$highlight-background;
+    color: variables.$highlight-color;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -20,12 +20,12 @@
     transition: background-color 0.2s ease;
 
     &:hover {
-      background-color: color.scale($highlight-background, $lightness: -10%);
+      background-color: color.scale(variables.$highlight-background, $lightness: -10%);
     }
   }
 
   &__title {
-    font-size: $font-size-medium;
+    font-size: variables.$font-size-medium;
     text-align: left;
   }
 
@@ -34,7 +34,7 @@
     margin-top: 6px;
     width: 12px;
     height: 12px;
-    border: solid $highlight-color;
+    border: solid variables.$highlight-color;
     border-width: 0 3px 3px 0;
     transform: rotate(225deg); // Initial chevron down
     transition: transform 0.3s ease;
@@ -50,9 +50,9 @@
     overflow: hidden;
     padding: 0 12px;
     opacity: 0;
-    background-color: $secondary-color;
-    color: $text-color;
-    font-size: $font-size-small;
+    background-color: variables.$secondary-color;
+    color: variables.$text-color;
+    font-size: variables.$font-size-small;
     transition: 
       max-height 0.3s ease-in-out, 
       padding 0.3s ease-in-out, 

@@ -1,4 +1,4 @@
-@import '../../styles/global.scss';
+@use '../../styles/variables.scss' as variables;
 
 .header {
     display: flex;
@@ -20,9 +20,9 @@
         gap: 20px; /* Space between links */
 
         &__link {
-            font-size: $font-size-medium;
+            font-size: variables.$font-size-medium;
             font-weight: bold;
-            color: $text-color;
+            color: variables.$text-color;
             text-decoration: none;
 
             &:hover {

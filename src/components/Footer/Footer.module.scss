@@ -1,10 +1,10 @@
-@import '../../styles/global.scss';
+@use '../../styles/variables.scss' as variables;
 
 .footer {
     margin-top: 30px;
     padding-top: 50px;
     padding-bottom: 10px;
-    background-image: $background-dark-image;
+    background-image: variables.$background-dark-image;
     text-align: center;
 
     &__logo {
@@ -19,7 +19,7 @@
 
     &__copyright {
         margin-top: 20px;
-        color: $highlight-color;
+        color: variables.$highlight-color;
     }
 }
 
