@@ -1,3 +1,4 @@
+// src/components/Collapse/index.jsx
 import PropTypes from "prop-types";
 import { useState } from "react";
 import styles from "./Collapse.module.scss";

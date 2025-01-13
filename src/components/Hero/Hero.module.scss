@@ -1,0 +1,43 @@
+@use '../../styles/variables.scss' as variables;
+@use '../../styles/mixins.scss' as mixins;
+
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    padding: 2rem;
+    text-align: center;
+    border-radius: 15px;
+    height: clamp(100px, 20vw, 160px);
+
+    @include mixins.mobile {
+        border-radius: 10px;
+        padding-left: 1.2rem;
+        text-align: left;
+        align-items: flex-start;
+      }
+
+    &__children {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      font-size: variables.$font-size-x-large;
+      font-weight: bold;
+      color: variables.$highlight-color;
+  
+      @include mixins.mobile {
+        flex-direction: column;
+        align-items: flex-start;
+        font-size: variables.$font-size-hero-mobile;
+        font-size: clamp(variables.$font-size-hero-mobile, 
+                   4.2vw, 
+                   variables.$font-size-x-large);;
+    }
+    }
+  }
+  

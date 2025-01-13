@@ -1,12 +1,16 @@
-// src/pages/Home/index.jsx
-// import Button from '../../components/Button';  // Import reusable Button component
+// src/pages/About/index.jsx
+import Hero from "../../components/Hero";
+import HeroBgImage from "../../assets/about-hero-bg-image.jpg";
 
 function About() {
   return (
-    <div className="home-page">
-      <h1>A propos</h1>
-      <p>Lorem ipsum</p>
-    </div>
+    <>
+      <Hero image={HeroBgImage} />
+      <div>
+        <h1>A propos</h1>
+        <p>Lorem ipsum</p>
+      </div>
+    </>
   );
 }
 

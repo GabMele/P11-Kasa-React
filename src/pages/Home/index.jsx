@@ -1,6 +1,7 @@
 import { useData } from '@/hooks/useData';
 import { Link } from 'react-router-dom';
 import styles from './Home.module.scss';
+import Hero from '@/components/Hero';
 
 const Home = () => {
   const { data } = useData();
@@ -12,9 +13,11 @@ const Home = () => {
   return (
     <div className={styles.home}>
       {/* Hero Section */}
-      <div className={styles.home__hero}>
-        <h1 className={styles.home__hero__slogan}>Chez vous, partout et ailleurs</h1>
-      </div>
+      <Hero>
+        <span>Chez vous,&nbsp; </span>
+        <span>partout et ailleurs</span>
+      </Hero>
+
 
       {/* Listing Grid */}
       <div className={styles.home__listings}>
