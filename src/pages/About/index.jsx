@@ -5,7 +5,7 @@ import HeroBgImage from "../../assets/about-hero-bg-image.jpg";
 function About() {
   return (
     <>
-      <Hero image={HeroBgImage} />
+      <Hero image={HeroBgImage} overlayOpacity={0.4} />
       <div>
         <h1>A propos</h1>
         <p>Lorem ipsum</p>

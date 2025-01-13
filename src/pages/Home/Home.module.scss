@@ -2,34 +2,6 @@
 @use '@/styles/mixins.scss' as mixins;
 
 .home {
-  &__hero {
-    margin-top: 10px;
-    background-image: variables.$background-dark-image;
-    background-size: cover;
-    background-position: center;
-    padding: 60px 20px;
-    text-align: center;
-    border-radius: 20px;
-    height: clamp(120px, 20vw, 180px); // Height varies between 300px and 600px
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    @include mixins.mobile {
-      padding: 3rem 20px;
-    }
-
-    &__slogan {
-      font-size: 2rem;
-      color: variables.$highlight-color;
-      margin: 0;
-      @include mixins.mobile {
-        font-size: variables.$font-size-large;
-        text-align: left;
-      }
-
-    }
-  }
 
   &__listings {
     display: grid;

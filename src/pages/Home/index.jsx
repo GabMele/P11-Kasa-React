@@ -13,7 +13,7 @@ const Home = () => {
   return (
     <div className={styles.home}>
       {/* Hero Section */}
-      <Hero>
+      <Hero overlayOpacity={0.2}>
         <span>Chez vous,&nbsp; </span>
         <span>partout et ailleurs</span>
       </Hero>
