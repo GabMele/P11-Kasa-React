@@ -1,3 +1,4 @@
+// src/styles/global.scss
 @use "./variables.scss" as variables;
 @use "./mixins.scss" as mixins;
 // ==============================
@@ -18,15 +19,21 @@
 // ==============================
 // Global Styles
 // ------------------------------
+
+html, body, #root { 
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
 body {
-  margin: 0 auto;
-  padding: 0 20px;
   font-family: "Montserrat", sans-serif;
   color: variables.$text-color;
   background-color: variables.$background-color;
   font-size: variables.$font-size-medium;
-  max-width: 960px;
-  min-width: 360px;
+
 
   @include mixins.mobile {
     width: 100%;
@@ -47,3 +54,5 @@ a {
     color: variables.$primary-color; /* Optional: Change color on hover */
   }
 }
+
+

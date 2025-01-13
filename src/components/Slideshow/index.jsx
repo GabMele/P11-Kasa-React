@@ -4,77 +4,62 @@ import styles from "./Slideshow.module.scss";
 
 const Slideshow = ({ images }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [direction, setDirection] = useState(null);
-  const [isAnimating, setIsAnimating] = useState(false);
 
   if (!images || images.length === 0) {
-    return null;
+    return <p>No images to display.</p>;
   }
 
-  const hasMultipleImages = images.length > 1;
-
   const handleNext = () => {
-    if (isAnimating) return;
-    setDirection('slideLeft');
-    setIsAnimating(true);
     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
   };
 
   const handlePrev = () => {
-    if (isAnimating) return;
-    setDirection('slideRight');
-    setIsAnimating(true);
     setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? images.length - 1 : prevIndex - 1
     );
   };
 
-  const handleTransitionEnd = () => {
-    setIsAnimating(false);
-    setDirection(null);
-  };
-
   return (
-    <div className={styles.slideshow} aria-label="Diaporama des images">
-      <div className={styles.slideshow__imageContainer}>
-        <img
-          src={images[currentIndex]}
-          alt={`Image ${currentIndex + 1} sur ${images.length}`}
-          className={`${styles.slideshow__image} ${direction ? styles[direction] : ''}`}
-          onAnimationEnd={handleTransitionEnd}
-        />
+    <div className={styles.slideshow}>
+      <div
+        className={styles.slideshow__track}
+        style={{
+          transform: `translateX(-${currentIndex * 100}%)`,
+        }}
+      >
+        {images.map((image, index) => (
+          <img
+            key={index}
+            src={image}
+            alt={`Slide ${index + 1}`}
+            className={styles.slideshow__image}
+          />
+        ))}
       </div>
-
-      {hasMultipleImages && (
+      {/* Only show chevrons if there is more than 1 image */}
+      {images.length > 1 && (
         <>
           <button
-            className={`${styles.slideshow__arrow} ${styles.slideshow__arrow__left}`}
+            className={`${styles.slideshow__button} ${styles.slideshow__buttonPrev}`}
             onClick={handlePrev}
-            aria-label="Image précédente"
-            disabled={isAnimating}
+            aria-label="Previous image"
           >
             &#10094;
           </button>
           <button
-            className={`${styles.slideshow__arrow} ${styles.slideshow__arrow__right}`}
+            className={`${styles.slideshow__button} ${styles.slideshow__buttonNext}`}
             onClick={handleNext}
-            aria-label="Image suivante"
-            disabled={isAnimating}
+            aria-label="Next image"
           >
             &#10095;
           </button>
         </>
       )}
 
-      {hasMultipleImages && (
-        <div
-          className={styles.slideshow__number}
-          aria-live="polite"
-          aria-label={`Image actuelle : ${currentIndex + 1} sur ${images.length}`}
-        >
-          {currentIndex + 1}/{images.length}
-        </div>
-      )}
+      <div className={styles.slideshow__number}>
+        {currentIndex + 1}/{images.length}
+      </div>
+
     </div>
   );
 };

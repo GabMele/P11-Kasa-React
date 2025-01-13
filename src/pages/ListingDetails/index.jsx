@@ -1,3 +1,4 @@
+// src/pages/ListingDetails/index.jsx
 import { useParams } from 'react-router-dom';
 import { useData } from '@/hooks/useData';
 import Collapse from '@/components/Collapse';
@@ -29,6 +30,7 @@ const ListingDetails = () => {
 
   return listing ? (
     <div className={styles.listing}>
+
       {/* Slideshow */}
       <div className={styles.listing__slideshow}>
         <Slideshow images={listing.pictures} />
@@ -40,9 +42,9 @@ const ListingDetails = () => {
           <h1 className={styles.listing__info__title}>{listing.title}</h1>
           <p className={styles.listing__info__location}>{listing.location}</p>
           {/* Tags Section */}
-          <div className={styles.listing__tags}>
+          <div className={styles.listing__info__tags}>
             {listing.tags.map((tag, index) => (
-              <div key={index} className={styles.listing__tags__tag}>
+              <div key={index} className={styles.listing__info__tags__tag}>
                 {tag}
               </div>
             ))}
@@ -50,9 +52,11 @@ const ListingDetails = () => {
         </div>
         <div className={styles.listing__info__right}>
           <div className={styles.listing__info__host}>
-            <span className={styles.listing__info__host__name}>
-              {listing.host.name}
-            </span>
+          <span className={styles.listing__info__host__name}>
+            {listing.host.name.split(' ').map((word, index) => (
+              <span key={index}>{word}</span>
+            ))}
+          </span>
             <img
               className={styles.listing__info__host__picture}
               src={listing.host.picture}
@@ -85,7 +89,9 @@ const ListingDetails = () => {
       </div>
     </div>
   ) : (
-    <p>Annonce non trouvée.</p>
+    <div className={styles.fullscreenMessage}>
+      <p>Annonce non trouvée.</p>
+    </div>
   );
 };
 

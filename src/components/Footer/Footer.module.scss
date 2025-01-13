@@ -1,15 +1,18 @@
+// Footer.module.scss
 @use '../../styles/variables.scss' as variables;
 
 .footer {
-    margin-top: 30px;
-    padding-top: 50px;
+    position: relative;
+    margin-top: auto;
+    padding-top: 40px;
     padding-bottom: 10px;
     background-image: variables.$background-dark-image;
     text-align: center;
+    width: 100%;
 
     &__logo {
         margin: 0 auto;
-        width: 120px; /* Set logo container width */
+        width: 80px; /* Set logo container width */
         img {
             width: 100%; /* Adjust the image to fit the container */
             height: auto; /* Maintain aspect ratio */
@@ -19,6 +22,7 @@
 
     &__copyright {
         margin-top: 20px;
+        font-size: variables.$font-size-x-small;
         color: variables.$highlight-color;
     }
 }

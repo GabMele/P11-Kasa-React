@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import styles from './Header.module.scss';
 import logoKasa from '@/assets/logo-kasa.png';
 
-function Header() {
+const Header = () => {
     return (
         <header className={styles.header}>
             {/* Logo */}

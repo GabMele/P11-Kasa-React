@@ -10,12 +10,12 @@ export const DataProvider = ({ source, children }) => {
 
   // Handle loading state
   if (loading) {
-    return <p>Loading...</p>;
+    return <p>Chargement des données...</p>;
   }
 
   // Handle error state
   if (error) {
-    return <p>Error: {error}</p>;
+    return <p>Erreur: {error}</p>;
   }
 
   // Provide data to children components

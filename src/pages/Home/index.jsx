@@ -31,7 +31,9 @@ const Home = () => {
                 alt={listing.title}
                 className={styles.home__listings__card__image}
               />
-              <div className={styles.home__listings__card__title}>{listing.title}</div>
+              <div className={styles.home__listings__card__title}>
+                {listing.title}
+              </div>
             </div>
           </Link>
         ))}

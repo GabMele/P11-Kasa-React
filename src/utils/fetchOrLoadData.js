@@ -1,14 +1,14 @@
 export const fetchOrLoadData = async (source) => {
   if (source === 'local') {
     try {
-      const data = await import('@/data/logements.json'); // Adjust path if needed
+      const data = await import('@/data/logements.json'); 
       return data.default;
     } catch {
       throw new Error('Failed to load local data from JSON file');
     }
   } else if (source === 'api') {
     try {
-      const response = await fetch('/api/data'); // Replace with your actual API URL
+      const response = await fetch('/api/data'); 
       if (!response.ok) {
         throw new Error(`Failed to fetch API data - HTTP ${response.status}`);
       }

@@ -1,0 +1,19 @@
+// src/router/Router.module.scss
+@use '@/styles/variables.scss' as variables;
+@use '@/styles/mixins.scss' as mixins;
+
+.mainLayout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content {
+  flex: 1;
+  max-width: 960px;
+  min-width: 340px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
