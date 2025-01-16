@@ -18,7 +18,6 @@ const Home = () => {
         <span>partout et ailleurs</span>
       </Hero>
 
-
       {/* Listing Grid */}
       <div className={styles.home__listings}>
         {data.map((listing) => (

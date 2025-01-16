@@ -10,9 +10,8 @@
   margin-bottom: 30px;
   transition: box-shadow 0.2s ease;
   
-  @include mixins.mobile {
-    
-    margin: 0px;
+  @include mixins.mobile {    
+    margin: 20px auto;
   }
 
   &__header {
@@ -24,10 +23,6 @@
     align-items: center;
     padding: 10px;
     transition: background-color 0.2s ease;
-    @include mixins.mobile {
-      
-      margin-bottom: 0px;
-    }
 
     &:hover {
       background-color: color.scale(variables.$highlight-background, $lightness: -10%);
@@ -70,7 +65,7 @@
 
     &__expanded {
       max-height: 300px; // Large enough to accommodate content
-      padding: 16px 12px; // Add padding when expanded
+      padding: 0px 12px; // Add padding when expanded
       opacity: 1;
     }
   }

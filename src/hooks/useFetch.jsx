@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import { fetchOrLoadData } from '../utils/fetchOrLoadData';
 
-const useFetch = (source) => {
+const useFetch = (sourceType, sourceData) => {
   const [state, setState] = useState({
     data: null,
     loading: true,
@@ -13,7 +13,7 @@ const useFetch = (source) => {
     const loadData = async () => {
       setState({ data: null, loading: true, error: null });
       try {
-        const result = await fetchOrLoadData(source);
+        const result = await fetchOrLoadData(sourceType, sourceData);
         setState({ data: result, loading: false, error: null });
       } catch (err) {
         setState({ data: null, loading: false, error: err.message });
@@ -21,7 +21,7 @@ const useFetch = (source) => {
     };
 
     loadData();
-  }, [source]);
+  }, [sourceType, sourceData]);
 
   return state;
 };

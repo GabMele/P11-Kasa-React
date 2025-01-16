@@ -73,7 +73,7 @@ const ListingDetails = () => {
       <div className={styles.listing__content}>
         {/* Description Section */}
         <div className={styles.listing__content__description}>
-          <Collapse title="Description">{listing.description}</Collapse>
+          <Collapse title="Description"><p>{listing.description}</p></Collapse>
         </div>
 
         {/* Equipments Section */}

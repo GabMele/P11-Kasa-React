@@ -2,10 +2,14 @@
 import { Link } from 'react-router-dom';
 import styles from './Footer.module.scss';
 import logoKasa from '@/assets/logo-kasa.png';
+import defaultBgImage from '../../assets/marble-texture.jpg';
+
 
 function Footer() {
     return (
-        <footer className={styles.footer}>
+        <footer className={styles.footer}
+            style={{ backgroundImage: `url(${defaultBgImage})` }
+            }>
             {/* Logo */}
             <div className={styles.footer__logo}>
                 <Link to="/">

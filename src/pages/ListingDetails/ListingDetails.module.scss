@@ -130,9 +130,9 @@
   &__content {
     display: flex;
     justify-content: space-between;
-    gap: 30px;
+    column-gap: 30px;
     @include mixins.mobile {
-      margin-bottom: 38px;
+      /*margin-bottom: 38px;*/
     }
 
     &__description,

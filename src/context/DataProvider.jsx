@@ -5,9 +5,8 @@ import { PropTypes } from 'prop-types';
 import DataContext from './DataContext';
 import useFetch from '../hooks/useFetch';
 
-export const DataProvider = ({ source, children }) => {
-  const { data, loading, error } = useFetch(source);
-
+export const DataProvider = ({ sourceType, sourceData, children }) => {
+  const { data, loading, error } = useFetch(sourceType, sourceData);
   // Handle loading state
   if (loading) {
     return <p>Chargement des données...</p>;
@@ -27,7 +26,8 @@ export const DataProvider = ({ source, children }) => {
 };
 
 DataProvider.propTypes = {
-  source: PropTypes.oneOf(['api', 'local']).isRequired,
+  sourceType: PropTypes.oneOf(['api', 'local']).isRequired,
+  sourceData: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
 };
 

@@ -1,0 +1,12 @@
+// src/pages/About/About.module.scss
+@use '../../styles/mixins.scss' as mixins;
+
+.about {
+
+    &__content {
+        padding: 4rem;
+        @include mixins.mobile {
+            padding: 0;
+        }
+    }
+}

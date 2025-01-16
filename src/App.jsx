@@ -3,7 +3,7 @@ import { DataProvider } from '@/context/DataProvider';
 import AppRouter from '@/router';
 
 const App = () => (
-  <DataProvider source="local">
+  <DataProvider sourceType="local" sourceData="logements">
     <AppRouter />
   </DataProvider>
 );
