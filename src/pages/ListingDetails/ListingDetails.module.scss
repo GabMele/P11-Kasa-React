@@ -126,25 +126,23 @@
       }
   }
 
-
-  &__content {
+  &__features {
     display: flex;
     justify-content: space-between;
     column-gap: 30px;
-    @include mixins.mobile {
-      /*margin-bottom: 38px;*/
-    }
-
-    &__description,
-    &__equipments {
-      flex: 1;
-    }
-
+    margin-bottom: 20px;
+    
     @include mixins.mobile {
       flex-direction: column;
     }
+
+    &__feature,
+    {
+      flex: 1;
+    } 
   }
 }
+
 
 .fullscreenMessage {
   width: 100%;      // Make it take full viewport width

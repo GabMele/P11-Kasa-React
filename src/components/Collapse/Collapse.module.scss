@@ -1,37 +1,45 @@
+// src/components/Collapse/Collapse.module.scss
 @use "sass:color";
 @use '../../styles/variables.scss' as variables;
 @use '../../styles/mixins.scss' as mixins;
 
+button {
+  font-family: inherit;
+}
 
 .collapse {
-  border: none;
-  border-radius: 4px;
+  border-radius: 6px;
   overflow: hidden;
-  margin-bottom: 30px;
+  margin: 10px 0;
   transition: box-shadow 0.2s ease;
   
-  @include mixins.mobile {    
-    margin: 20px auto;
+  @include mixins.mobile {
+    /*margin: 10px 0;*/
+    border-radius: 4px;
   }
 
-  &__header {
+  &__trigger {
+    width: 100%;
     cursor: pointer;
     background-color: variables.$highlight-background;
     color: variables.$highlight-color;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
+    padding: 7px 10px;
+    font-size: variables.$font-size-medium;
+    text-align: left;
+    border: none;
     transition: background-color 0.2s ease;
 
     &:hover {
       background-color: color.scale(variables.$highlight-background, $lightness: -10%);
     }
-  }
 
-  &__title {
-    font-size: variables.$font-size-medium;
-    text-align: left;
+    &:focus-visible {
+      outline: 2px solid variables.$highlight-color;
+      outline-offset: 2px;
+    }
   }
 
   &__icon {
@@ -41,17 +49,18 @@
     height: 12px;
     border: solid variables.$highlight-color;
     border-width: 0 3px 3px 0;
-    transform: rotate(225deg); // Initial chevron down
+    transform: rotate(225deg);
     transition: transform 0.3s ease;
+    display: inline-block;
 
-    &__expanded {
+    &_expanded {
       transform: rotate(45deg);
-      margin-top: 0px;
+      margin-top: 0;
     }
   }
 
   &__content {
-    max-height: 0; // Initial hidden state
+    max-height: 0;
     overflow: hidden;
     padding: 0 12px;
     opacity: 0;
@@ -63,9 +72,9 @@
       padding 0.3s ease-in-out, 
       opacity 0.3s ease-in-out;
 
-    &__expanded {
-      max-height: 300px; // Large enough to accommodate content
-      padding: 0px 12px; // Add padding when expanded
+    &_expanded {
+      max-height: 300px;
+      padding: 12px 12px;
       opacity: 1;
     }
   }

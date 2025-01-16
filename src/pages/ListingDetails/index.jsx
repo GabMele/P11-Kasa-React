@@ -70,22 +70,35 @@ const ListingDetails = () => {
       </div>
 
       {/* Description and Equipments */}
-      <div className={styles.listing__content}>
+      <div className={styles.listing__features}>
         {/* Description Section */}
-        <div className={styles.listing__content__description}>
-          <Collapse title="Description"><p>{listing.description}</p></Collapse>
+        <div className={styles.listing__features__feature}>
+          <Collapse>
+            <Collapse.Trigger>
+              Description
+            </Collapse.Trigger>
+            <Collapse.Content>
+              {listing.description}
+            </Collapse.Content>
+          </Collapse>
         </div>
 
         {/* Equipments Section */}
-        <div className={styles.listing__content__equipments}>
-          <Collapse title="Equipments">
-            <ul>
-              {listing.equipments.map((equipment, index) => (
-                <li key={index}>{equipment}</li>
-              ))}
-            </ul>
+        <div className={styles.listing__features__feature}>
+          <Collapse>
+            <Collapse.Trigger>
+              Equipments
+            </Collapse.Trigger>
+            <Collapse.Content>
+              <ul>
+                {listing.equipments.map((equipment, index) => (
+                  <li key={index}>{equipment}</li>
+                ))}
+              </ul>
+            </Collapse.Content>
           </Collapse>
         </div>
+
       </div>
     </div>
   ) : (

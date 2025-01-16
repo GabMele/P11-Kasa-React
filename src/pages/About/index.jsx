@@ -20,13 +20,18 @@ const About = () => {
   return (
     <>
       <Hero image={HeroBgImage} overlayOpacity={0.4} />
-        <div className={styles.about__content} data-testid={data}>
-          {data.map((item) => (
-            <Collapse key={item.title} title={item.title}>
-              <p>{item.content}</p>
-            </Collapse>
-          ))}
-        </div>
+      <div className={styles.about}>
+        {data.map((item) => (
+          <div key={item.title} className={styles.about__feature}>
+            <div className={styles.collapseWrapper}> {/* This is the wrapper div */}
+              <Collapse>
+                <Collapse.Trigger>{item.title}</Collapse.Trigger>
+                <Collapse.Content>{item.content}</Collapse.Content>
+              </Collapse>
+            </div>
+          </div>
+        ))}
+      </div>
     </>
   );
 }
