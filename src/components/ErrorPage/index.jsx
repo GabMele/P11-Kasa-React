@@ -1,3 +1,8 @@
+/**
+ * Displays a 404 error page with a message and a link to the homepage.
+ * 
+ * @returns {JSX.Element} The error page layout.
+ */
 import { Link } from 'react-router-dom';
 import styles from './ErrorPage.module.scss';
 
@@ -12,4 +17,3 @@ function ErrorPage() {
 }
 
 export default ErrorPage;
-

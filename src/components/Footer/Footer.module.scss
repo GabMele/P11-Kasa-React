@@ -1,28 +1,33 @@
-// Footer.module.scss
-@use '../../styles/variables.scss' as variables;
+/**
+ * Footer styles.
+ * 
+ * - `.footer`: Positions the footer at the bottom of the page.
+ * - `.footer__logo`: Reuses the logo, just applying a white color filter.
+ */
+ @use '../../styles/variables.scss' as variables;
 
-.footer {
-    position: relative;
-    margin-top: auto;
-    padding-top: 40px;
-    padding-bottom: 10px;
-    text-align: center;
-    width: 100%;
-
-    &__logo {
-        margin: 0 auto;
-        width: 80px; /* Set logo container width */
-        img {
-            width: 100%; /* Adjust the image to fit the container */
-            height: auto; /* Maintain aspect ratio */
-            filter: grayscale(1) brightness(150%);            
-        }
-    }
-
-    &__copyright {
-        margin-top: 20px;
-        font-size: variables.$font-size-x-small;
-        color: variables.$highlight-color;
-    }
-}
-
+ .footer {
+     position: relative;
+     margin-top: auto;
+     padding-top: 40px;
+     padding-bottom: 10px;
+     text-align: center;
+     width: 100%;
+ 
+     &__logo {
+         margin: 0 auto;
+         width: 80px; /* Set logo container width */
+         img {
+             width: 100%; /* Adjust the image to fit the container */
+             height: auto; /* Maintain aspect ratio */
+             filter: grayscale(1) brightness(150%);            
+         }
+     }
+ 
+     &__copyright {
+         margin-top: 20px;
+         font-size: variables.$font-size-x-small;
+         color: variables.$highlight-color;
+     }
+ }
+ 

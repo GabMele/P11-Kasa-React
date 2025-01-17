@@ -1,4 +1,13 @@
 // src/pages/About/About.module.scss
+
+/**
+ * Styles for the About page.
+ * 
+ * - `.about` defines layout and responsive padding/width.
+ * - `.about__feature` manages feature sections with mobile adjustments.
+ * 
+ * Utilizes mixins from `mixins.scss` for responsive design.
+ */
 @use '../../styles/mixins.scss' as mixins;
 
 .about {

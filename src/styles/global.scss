@@ -1,58 +1,67 @@
 // src/styles/global.scss
-@use "./variables.scss" as variables;
-@use "./mixins.scss" as mixins;
-// ==============================
-// Global SCSS File
-// ==============================
 
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+/**
+ * Global SCSS file for the application.
+ * 
+ * This file imports the necessary variables and mixins, and defines global styles 
+ * for the application. 
+ * 
+ * @namespace GlobalStyles
+ */
 
-// ==============================
-// Global Box-Sizing
-// ------------------------------
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-// ==============================
-// Global Styles
-// ------------------------------
-
-html, body, #root { 
-  margin: 0;
-  padding: 0;
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-body {
-  font-family: "Montserrat", sans-serif;
-  color: variables.$text-color;
-  background-color: variables.$background-color;
-  font-size: variables.$font-size-medium;
-
-
-  @include mixins.mobile {
-    width: 100%;
-    font-size: variables.$font-size-small;
-  }
-
-  @include mixins.desktop {
-    font-size: variables.$font-size-medium;
-  }
-}
-
-a {
-  text-decoration: none; /* Remove default underline */
-  transition: color 0.2s ease, text-decoration 0.2s ease; /* Smooth hover effect */
-
-  &:hover {
-    text-decoration: underline; /* Apply underline on hover */
-    color: variables.$primary-color; /* Optional: Change color on hover */
-  }
-}
-
-
+ @use "./variables.scss" as variables;
+ @use "./mixins.scss" as mixins;
+ 
+ // ==============================
+ // Global SCSS File
+ // ==============================
+ 
+ @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+ 
+ // ==============================
+ // Global Box-Sizing
+ // ------------------------------
+ *,
+ *::before,
+ *::after {
+   box-sizing: border-box;
+ }
+ 
+ // ==============================
+ // Global Styles
+ // ------------------------------
+ 
+ html, body, #root { 
+   margin: 0;
+   padding: 0;
+   min-height: 100%;
+   display: flex;
+   flex-direction: column;
+ }
+ 
+ body {
+   font-family: "Montserrat", sans-serif;
+   color: variables.$text-color;
+   background-color: variables.$background-color;
+   font-size: variables.$font-size-medium;
+ 
+   @include mixins.mobile {
+     width: 100%;
+     font-size: variables.$font-size-small;
+   }
+ 
+   @include mixins.desktop {
+     font-size: variables.$font-size-medium;
+   }
+ }
+ 
+ a {
+   text-decoration: none; /* Remove default underline */
+   transition: color 0.2s ease, text-decoration 0.2s ease; /* Smooth hover effect */
+ 
+   &:hover {
+     text-decoration: underline; /* Apply underline on hover */
+     color: variables.$primary-color; /* Optional: Change color on hover */
+   }
+ }
+ 

@@ -1,20 +1,32 @@
 // src/styles/variables.scss
-  
+
+/**
+ * SCSS variables for the application.
+ * 
+ * This file contains all the global variables used throughout the app:
+ * colors, font sizes, and breakpoint. These variables allow for 
+ * consistent design and easy adjustments across the app, making it more 
+ * maintainable and adaptable to different screen sizes.
+ * 
+ * @namespace Variables
+ */
+
+// Breakpoints
 $breakpoint-mobile: 640px;
-  
+
 // SCSS Variables
-$primary-color: #FF6060;
-$secondary-color: #eaeaea;
-$background-color: #ffffff;
-$text-color: #212529;
-$highlight-color: #FFFFFF;
-$highlight-background: $primary-color;
+$primary-color: #FF6060; // Primary color used for key elements
+$secondary-color: #eaeaea; // Secondary color for backgrounds or borders
+$background-color: #ffffff; // Background color of the app
+$text-color: #212529; // Default text color
+$highlight-color: #FFFFFF; // Highlight color for emphasized text
+$highlight-background: $primary-color; // Background color for highlighted elements
 
-$font-size-x-small: 0.65rem;
-$font-size-small: 0.85rem;
-$font-size-medium: 1rem;
-$font-size-large: 1.5rem;
-$font-size-x-large: 2.1rem;
+// Font Sizes
+$font-size-x-small: 0.65rem; // Extra small font size
+$font-size-small: 0.85rem; // Small font size
+$font-size-medium: 1rem; // Medium font size (default)
+$font-size-large: 1.5rem; // Large font size
+$font-size-x-large: 2.1rem; // Extra large font size
 
-$font-size-hero-mobile: 1.2rem;
-
+$font-size-hero-mobile: 1.2rem; // Font size for hero section on mobile

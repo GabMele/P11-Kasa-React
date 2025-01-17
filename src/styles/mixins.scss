@@ -1,17 +1,41 @@
 // src/styles/mixins.scss
-@use "./variables.scss" as variables;
 
-// ==============================
-// Mixins
-// ------------------------------
-@mixin mobile {
-  @media (max-width: variables.$breakpoint-mobile) {
-    @content;
-  }
-}
+/**
+ * Mixins for responsive design.
+ * 
+ * This file contains mixins that help create responsive styles for the app, 
+ * specifically targeting mobile and desktop views. The `mobile` mixin applies 
+ * styles for screens below a specified breakpoint, while the `desktop` mixin 
+ * applies styles for screens above that breakpoint.
+ * 
+ * @namespace Mixins
+ */
 
-@mixin desktop {
-  @media (min-width: (variables.$breakpoint-mobile + 1)) {
-    @content;
-  }
-}
+ @use "./variables.scss" as variables;
+
+ // ==============================
+ // Mixins
+ // ------------------------------
+ 
+ /**
+  * Mixin for mobile-specific styles.
+  * 
+  * This mixin targets screens with a width less than or equal to the mobile breakpoint
+  * defined in the variables file. It helps to apply styles specifically for mobile 
+  * devices in a flexible way.
+  */
+ @mixin mobile {
+   @media (max-width: variables.$breakpoint-mobile) {
+     @content;
+   }
+ }
+ 
+ /**
+  * Mixin for desktop-specific styles.
+  */
+ @mixin desktop {
+   @media (min-width: (variables.$breakpoint-mobile + 1)) {
+     @content;
+   }
+ }
+ 

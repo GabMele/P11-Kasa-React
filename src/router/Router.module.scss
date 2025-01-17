@@ -1,19 +1,32 @@
 // src/router/Router.module.scss
-@use '@/styles/variables.scss' as variables;
-@use '@/styles/mixins.scss' as mixins;
 
-.mainLayout {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
+/**
+ * Styles for the main layout and content areas of the app.
+ * 
+ * This stylesheet defines the layout structure for the app, with the `fullLayout` 
+ * ensuring a full-width footer and a boxed content area (`contentArea`). The layout 
+ * is designed to have a minimum width for the content and a flexible structure 
+ * to accommodate various screen sizes. The content area is centered with some padding, 
+ * while the footer spans the full width of the page.
+ * 
+ * @namespace RouterStyles
+ */
 
-.content {
-  flex: 1;
-  max-width: 960px;
-  min-width: 340px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
+ @use '@/styles/variables.scss' as variables;
+ @use '@/styles/mixins.scss' as mixins;
+ 
+ .fullLayout {
+   display: flex;
+   flex-direction: column;
+   min-height: 100vh;
+ }
+ 
+ .contentArea {
+   flex: 1;
+   max-width: 960px;
+   min-width: 340px;
+   width: 100%;
+   margin: 0 auto;
+   padding: 0 20px;
+ }
+ 

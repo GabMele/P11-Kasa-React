@@ -1,3 +1,20 @@
+// src/pages/Home.jsx
+
+/**
+ * Home page component that displays a hero section and a grid of listings.
+ * 
+ * This component fetches data using the `useData` custom hook and displays 
+ * a list of items fetched from the data source (logements.json). If the data is unavailable, 
+ * it shows an error message. Otherwise, it renders a hero section with some 
+ * text, followed by a grid of listing cards. Each card is clickable and links 
+ * to a detailed view of the respective listing.
+ * 
+ * The component is styled using the `Home.module.scss` stylesheet.
+ * 
+ * @returns {JSX.Element} The rendered Home page with a hero section and listings.
+ * @see useData for data fetching logic.
+ * @see Hero for the hero section component.
+ */
 import { useData } from '@/hooks/useData';
 import { Link } from 'react-router-dom';
 import styles from './Home.module.scss';

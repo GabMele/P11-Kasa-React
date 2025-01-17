@@ -1,4 +1,34 @@
-.slideshow {
+// src/components/Slideshow/Slideshow.module.scss
+
+/**
+ * Styles for the Slideshow component.
+ *
+ * The following styles manage the layout, appearance, and behavior of the slideshow, including:
+ * - The responsive layout with flexbox.
+ * - Smooth transition animations for sliding images.
+ * - Interactive navigation buttons with hover effects.
+ * - Display of the current slide number.
+ * 
+ * Key points:
+ * 1. **Positioning and Layout Strategy**:
+ *    - **`.slideshow`**: Uses `position: relative` to enable absolute positioning of children (navigation buttons and image number display).
+ *    - **`.slideshow__track`**: Uses `display: flex` to horizontally align images, ensuring a smooth sliding effect when transitioning.
+ * 
+ * 2. **Image Scaling**:
+ *    - **`.slideshow__image`**: `object-fit: cover` is used to scale images while preserving their aspect ratio, ensuring no empty space or stretching within the container.
+ * 
+ * 3. **Smooth Transition for Image Movement**:
+ *    - **`.slideshow__track`**: A `transform` transition is applied for smooth image sliding, ensuring a visually appealing, gradual transition between slides.
+ * 
+ * 4. **Interactive Navigation Buttons**:
+ *    - **Hover Effect**: The buttons have a hover effect that darkens their background, providing clear visual feedback that they are clickable.
+ *    - **Positioning**: The buttons are absolutely positioned at the left and right sides of the slideshow container, using `left: 10px` for "Previous" and `right: 10px` for "Next".
+ * 
+ * 5. **Current Slide Indicator**:
+ *    - **`.slideshow__number`**: Positioned at the bottom-right corner, this displays the current slide number in relation to the total number of images.
+ *    - The number has a semi-transparent background to ensure visibility without obstructing the images.
+ */
+ .slideshow {
   position: relative;
   width: 100%;
   max-width: 100%;
@@ -48,7 +78,6 @@
     &Next {
       right: 10px;
     }
-
   }
 
   &__number {

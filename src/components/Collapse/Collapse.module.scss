@@ -1,81 +1,135 @@
-// src/components/Collapse/Collapse.module.scss
-@use "sass:color";
-@use '../../styles/variables.scss' as variables;
-@use '../../styles/mixins.scss' as mixins;
-
-button {
-  font-family: inherit;
-}
-
-.collapse {
-  border-radius: 6px;
-  overflow: hidden;
-  margin: 10px 0;
-  transition: box-shadow 0.2s ease;
-  
-  @include mixins.mobile {
-    /*margin: 10px 0;*/
-    border-radius: 4px;
-  }
-
-  &__trigger {
-    width: 100%;
-    cursor: pointer;
-    background-color: variables.$highlight-background;
-    color: variables.$highlight-color;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 7px 10px;
-    font-size: variables.$font-size-medium;
-    text-align: left;
-    border: none;
-    transition: background-color 0.2s ease;
-
-    &:hover {
-      background-color: color.scale(variables.$highlight-background, $lightness: -10%);
-    }
-
-    &:focus-visible {
-      outline: 2px solid variables.$highlight-color;
-      outline-offset: 2px;
-    }
-  }
-
-  &__icon {
-    margin-right: 8px;
-    margin-top: 6px;
-    width: 12px;
-    height: 12px;
-    border: solid variables.$highlight-color;
-    border-width: 0 3px 3px 0;
-    transform: rotate(225deg);
-    transition: transform 0.3s ease;
-    display: inline-block;
-
-    &_expanded {
-      transform: rotate(45deg);
-      margin-top: 0;
-    }
-  }
-
-  &__content {
-    max-height: 0;
-    overflow: hidden;
-    padding: 0 12px;
-    opacity: 0;
-    background-color: variables.$secondary-color;
-    color: variables.$text-color;
-    font-size: variables.$font-size-small;
-    transition: 
-      max-height 0.3s ease-in-out, 
-      padding 0.3s ease-in-out, 
-      opacity 0.3s ease-in-out;
-
-    &_expanded {
-      max-height: 300px;
-      padding: 12px 12px;
-      opacity: 1;
-    }
-  }
-}
+/**
+ * `Collapse` component styles.
+ * 
+ * This module defines the styles for the `Collapse` component, which is used to create 
+ * a collapsible UI pattern with a trigger and content. The styles include transitions, 
+ * background colors, and visual effects for the collapsed and expanded states of the 
+ * component and its subcomponents.
+ *
+ */
+ @use "sass:color";
+ @use '../../styles/variables.scss' as variables;
+ @use '../../styles/mixins.scss' as mixins;
+ 
+ /**
+  * Global button styles used within the Collapse component.
+  * 
+  * Applies font family inheritance to buttons to maintain consistent typography across 
+  * different browsers and systems.
+  */
+ button {
+   font-family: inherit;
+ }
+ 
+ /**
+  * Styles for the collapse container that holds the trigger and content.
+  * 
+  */
+ .collapse {
+   border-radius: 6px;
+   overflow: hidden;
+   margin: 10px 0;
+   transition: box-shadow 0.2s ease;
+   
+   @include mixins.mobile {
+     /*margin: 10px 0;*/
+     border-radius: 4px;
+   }
+ 
+   /**
+    * Styles for the collapse trigger button.
+    * 
+    * The trigger button spans the full width of the collapse container.
+    * It has a pointer cursor and applies an outline on focus to improve 
+    * accessibility.
+    * 
+    */
+   &__trigger {
+     width: 100%;
+     cursor: pointer;
+     background-color: variables.$highlight-background;
+     color: variables.$highlight-color;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding: 7px 10px;
+     font-size: variables.$font-size-medium;
+     text-align: left;
+     border: none;
+     transition: background-color 0.2s ease;
+ 
+     &:hover {
+       background-color: color.scale(variables.$highlight-background, $lightness: -10%);
+     }
+ 
+     /**
+      * Focus-visible state for the trigger button.
+      * 
+      * Adds a visible outline to improve accessibility when the button is focused.
+      */
+     &:focus-visible {
+       outline: 2px solid variables.$highlight-color;
+       outline-offset: 2px;
+     }
+   }
+ 
+   /**
+    * Styles for the icon within the trigger button.
+    * 
+    * This icon visually indicates the expanded/collapsed state of the content. It 
+    * uses a rotated border to create a chevron-like effect.
+    */
+   &__icon {
+     margin-right: 8px;
+     margin-top: 6px;
+     width: 12px;
+     height: 12px;
+     border: solid variables.$highlight-color;
+     border-width: 0 3px 3px 0;
+     transform: rotate(225deg);
+     transition: transform 0.3s ease;
+     display: inline-block;
+ 
+     /**
+      * Expanded state of the collapse icon.
+      * 
+      * When the content is expanded, the icon rotates to indicate the change in state.
+      */
+     &_expanded {
+       transform: rotate(45deg);
+       margin-top: 0;
+     }
+   }
+ 
+   /**
+    * Styles for the collapse content section.
+    * 
+    * The content section is initially hidden by setting `max-height` to 0, with 
+    * opacity set to 0. When expanded, the content 
+    * section becomes visible expanding with a smooth transition effect.
+    * 
+    */
+   &__content {
+     max-height: 0;
+     overflow: hidden;
+     padding: 0 12px;
+     opacity: 0;
+     background-color: variables.$secondary-color;
+     color: variables.$text-color;
+     font-size: variables.$font-size-small;
+     transition: 
+       max-height 0.3s ease-in-out, 
+       padding 0.3s ease-in-out, 
+       opacity 0.3s ease-in-out;
+ 
+     /**
+      * Expanded state of the collapse content.
+      */
+     &_expanded {
+       max-height: 300px;
+       padding: 12px 12px;
+       opacity: 1;
+     }
+   }
+ }
+ 

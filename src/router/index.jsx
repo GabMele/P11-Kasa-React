@@ -1,4 +1,17 @@
 // src/router/index.jsx
+
+/**
+ * Main routing component for the app using React Router.
+ * 
+ * This component sets up the routes for different pages of the app, 
+ * including the `Home`, `About`, and `ListingDetails` pages. It also 
+ * includes a fallback route for undefined paths, rendering an `ErrorPage` 
+ * in case of a 404 error. The layout structure has been designed with 
+ * a full-width footer and a boxed content area (`contentArea`), ensuring 
+ * a responsive design.
+ * 
+ * @returns {JSX.Element} The rendered router with all routes and layout.
+ */
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from '@/pages/Home';
 import About from '@/pages/About';
@@ -10,8 +23,8 @@ import styles from './Router.module.scss';
 
 const AppRouter = () => (
   <Router>
-    <div className={styles.mainLayout}>
-      <div className={styles.content}>
+    <div className={styles.fullLayout}>
+      <div className={styles.contentArea}>
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />

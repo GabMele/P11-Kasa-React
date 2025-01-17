@@ -1,57 +1,106 @@
-@use '../../styles/variables.scss' as variables;
-@use '../../styles/mixins.scss' as mixins;
-
-
-.hero {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-size: cover;
-    background-position: center;
-    padding: 2rem;
-    text-align: center;
-    border-radius: 15px;
-    height: clamp(100px, 20vw, 160px);
-
-    @include mixins.mobile {
-        border-radius: 10px;
-        padding-left: 1.2rem;
-        text-align: left;
-        align-items: flex-start;
-    }
-
-    &__overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        border-radius: 15px;
-        z-index: 1;
-        pointer-events: none; // Prevents interactions with the overlay
-    }
-
-    &__children {
-        position: relative;
-        z-index: 2; // Ensure children appear above the overlay
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        font-size: variables.$font-size-x-large;
-        font-weight: bold;
-        color: variables.$highlight-color;
-    
-        @include mixins.mobile {
-            flex-direction: column;
-            align-items: flex-start;
-            font-size: variables.$font-size-hero-mobile;
-            font-size: clamp(variables.$font-size-hero-mobile, 
-                       4.2vw, 
-                       variables.$font-size-x-large);;
-        }
-    }
-  }
-  
+/**
+ * Hero Component Styles
+ * 
+ * A responsive, flexible styling system for the Hero component that implements:
+ * - Fluid typography using clamp()
+ * - BEM methodology for class naming
+ * - Z-index layering system
+ * 
+ * Key SCSS/React Implementation Features:
+ * 1. **Module Organization**:
+ *    - Uses SASS modules (@use) instead of @import for better encapsulation
+ *    - Separates variables and mixins into reusable files
+ *    - Follows modern SASS best practices for dependency management
+ */
+ @use '../../styles/variables.scss' as variables;
+ @use '../../styles/mixins.scss' as mixins;
+ 
+ /**
+  * Root Hero Container
+  * 
+  * Implementation Notes:
+  * - Uses relative positioning to create a stacking context for overlay
+  * - Implements fluid height scaling with clamp()
+  * - Centers content both vertically and horizontally by default
+  * - Maintains consistent border-radius across breakpoints
+  * 
+  */
+ .hero {
+     position: relative;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     background-size: cover;
+     background-position: center;
+     padding: 2rem;
+     text-align: center;
+     border-radius: 15px;
+     // Fluid height scaling: min 100px, max 160px, scales with viewport
+     height: clamp(100px, 20vw, 160px);
+ 
+     // Mobile-specific adjustments
+     @include mixins.mobile {
+         border-radius: 10px;
+         padding-left: 1.2rem;
+         text-align: left;
+         align-items: flex-start;
+     }
+ 
+     /**
+      * Dark Overlay Layer
+      * 
+      * Implementation Notes:
+      * - Uses absolute positioning to cover entire hero area
+      * - Maintains border radius to match parent
+      * - Uses pointer-events: none to prevent overlay from blocking interactions
+      * - Z-index: 1 places it above background, below content
+      */
+     &__overlay {
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         border-radius: 15px;
+         z-index: 1;
+         pointer-events: none; // Critical for allowing clicks to pass through
+     }
+ 
+     /**
+      * Content Container
+      * 
+      * Implementation Notes:
+      * - Uses relative positioning and z-index to layer above overlay
+      * - Implements responsive font sizing with clamp()
+      * - Changes layout direction on mobile breakpoint
+      * - Uses CSS variables for consistent typography
+      * 
+      * Responsive Behavior:
+      * - Desktop: Row layout, centered content
+      * - Mobile: Column layout, left-aligned content
+      * 
+      */
+     &__children {
+         position: relative;
+         z-index: 2;
+         display: flex;
+         flex-direction: row;
+         align-items: center;
+         justify-content: center;
+         font-size: variables.$font-size-x-large;
+         font-weight: bold;
+         color: variables.$highlight-color;
+     
+         @include mixins.mobile {
+             flex-direction: column;
+             align-items: flex-start;
+             // Complex fluid typography implementation
+             font-size: clamp(
+                 variables.$font-size-hero-mobile, // minimum size
+                 4.2vw,                           // preferred size (scales with viewport)
+                 variables.$font-size-x-large     // maximum size
+             );
+         }
+     }
+ }

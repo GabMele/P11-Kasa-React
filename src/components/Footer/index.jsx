@@ -1,9 +1,16 @@
-// src/components/Header/index.jsx
+/**
+ * `Footer` component renders the footer of the page with a logo and copyright information.
+ * 
+ * The component includes a logo wrapped in a `Link` component, directing to the homepage (`/`).
+ * 
+ * The logo image is sourced from the `logo-kasa.png` file and the background is set using an asset.
+ * 
+ * @returns {JSX.Element} The JSX structure of the footer with logo and copyright info.
+ */
 import { Link } from 'react-router-dom';
 import styles from './Footer.module.scss';
 import logoKasa from '@/assets/logo-kasa.png';
 import defaultBgImage from '../../assets/marble-texture.jpg';
-
 
 function Footer() {
     return (

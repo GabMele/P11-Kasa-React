@@ -1,24 +1,22 @@
 // src/components/Header/Header.module.scss
-@use '@/styles/variables.scss' as variables;
 
-.header {
-    display: flex;
-    justify-content: space-between; /* Push logo and nav to the extremes */
-    align-items: center; /* Center vertically */
-    padding-top: 30px;
-    padding-bottom: 20px;
-
-    &__logo {
-        width: 120px; /* Set logo container width */
-        img {
-            width: 100%; /* Adjust the image to fit the container */
-            height: auto; /* Maintain aspect ratio */
-        }
-    }
-
+/**
+ * Navigation styles for the Header component.
+ *
+ * Key points:
+ * 1. **Navigation Layout**:
+ *    - **`.header__nav`**: Uses `display: flex` to align navigation links horizontally. 
+ *    - **`gap: 20px`**: Ensures consistent spacing between links in the navigation.
+ *
+ * 2. **Link Styling**:
+ *    - **`.header__nav__link`**: The links are styled with a medium font size, bold text, and the color defined by `variables.$text-color`.
+ *    - **Hover Effect**: Links are underlined on hover, providing visual feedback for interactivity.
+ */
+ .header {
+    /* other styles */
     &__nav {
         display: flex;
-        gap: 20px; /* Space between links */
+        gap: 20px;
 
         &__link {
             font-size: variables.$font-size-medium;
@@ -32,4 +30,3 @@
         }
     }
 }
-
