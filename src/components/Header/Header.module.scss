@@ -12,8 +12,22 @@
  *    - **`.header__nav__link`**: The links are styled with a medium font size, bold text, and the color defined by `variables.$text-color`.
  *    - **Hover Effect**: Links are underlined on hover, providing visual feedback for interactivity.
  */
+ @use '../../styles/variables.scss' as variables;
+
  .header {
-    /* other styles */
+    display: flex;
+    justify-content: space-between; /* Push logo and nav to the extremes */
+    align-items: center; /* Center vertically */
+    padding-top: 30px;
+    padding-bottom: 20px;
+    &__logo {
+        width: 120px; /* Set logo container width */
+        img {
+            width: 100%; /* Adjust the image to fit the container */
+            height: auto; /* Maintain aspect ratio */
+        }
+    }
+
     &__nav {
         display: flex;
         gap: 20px;
