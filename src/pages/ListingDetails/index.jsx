@@ -33,6 +33,7 @@ import { useData } from '@/hooks/useData';
 import Collapse from '@/components/Collapse';
 import Slideshow from '@/components/Slideshow';
 import styles from './ListingDetails.module.scss';
+import ErrorPage from '@/components/ErrorPage';
 
 const ListingDetails = () => {
   const { id } = useParams(); // Extract the listing ID from the URL
@@ -144,9 +145,7 @@ const ListingDetails = () => {
     </div>
   ) : (
     // If no listing is found, show a message
-    <div className={styles.fullscreenMessage}>
-      <p>Annonce non trouvée.</p>
-    </div>
+      <ErrorPage />
   );
 };
 
